@@ -1,7 +1,5 @@
 package com.epam.algorithms;
 
-import java.util.Arrays;
-
 /**
  * Here are the tasks for working with the arrays.
  * <p>
@@ -32,9 +30,9 @@ public class ArrayTasks {
         return resultArr;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println(Arrays.toString(new ArrayTasks().generateNumbers(12)));
-    }
+    }*/
 
     /**
      * Find the sum of all elements of the int[] array.
