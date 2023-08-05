@@ -1,5 +1,7 @@
 package com.epam.algorithms;
 
+import java.util.Arrays;
+
 /**
  * Here are the tasks for working with the arrays.
  * <p>
@@ -24,10 +26,14 @@ public class ArrayTasks {
      */
     public int[] generateNumbers(int length) {
         int[] resultArr = new int[length];
-        for (int i = 1; i <= length; i++) {
-            resultArr[i] = i;
+        for (int i = 0; i < length; i++) {
+            resultArr[i] = i + 1;
         }
         return resultArr;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(new ArrayTasks().generateNumbers(12)));
     }
 
     /**
