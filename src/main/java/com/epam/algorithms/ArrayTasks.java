@@ -30,10 +30,6 @@ public class ArrayTasks {
         return resultArr;
     }
 
-    /*public static void main(String[] args) {
-        System.out.println(Arrays.toString(new ArrayTasks().generateNumbers(12)));
-    }*/
-
     /**
      * Find the sum of all elements of the int[] array.
      * <p>
@@ -91,16 +87,37 @@ public class ArrayTasks {
      * arr = [1,-2, 3]      -> [1, 3] arr = [-1, -2, -3]   -> [] arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
+        // считаем положителные числа
         int positiveNumbersCount = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
+        for (int k : arr) {
+            if (k > 0) {
                 positiveNumbersCount++;
             }
         }
 
-        int[] positiveNumbersArr = new int[positiveNumbersCount];
+        // записываем их индексы в отделный массив
+        int[] positiveNumbersIndexes = new int[positiveNumbersCount];
+        for (int i = 0; i < positiveNumbersIndexes.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] > 0) {
+                    positiveNumbersIndexes[i] = j;
+                    i++;
+                }
+            }
+        }
 
-        return null;
+        // формируем массив положитедбгых чисел
+        int[] positiveNumbersArr = new int[positiveNumbersCount];
+        for (int i = 0; i < positiveNumbersArr.length; i++) {
+            positiveNumbersArr[i] = arr[positiveNumbersIndexes[i]];
+        }
+
+        return positiveNumbersArr;
+    }
+
+    public static void main(String[] args) {
+        //new ArrayTasks().sortRaggedArray(new int[][]{{3, 1, 2,}, {3,2}});
+        new ArrayTasks().getOnlyPositiveNumbers(new int[]{-3, -1, -2, -6});
     }
 
     /**
@@ -113,7 +130,18 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]] arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        return null;
-    }
 
+        //Arrays.stream(arr).forEach(Arrays::sort);
+
+
+        int[][] resultArr = new int[arr.length][];
+
+        int[] lenghts = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            lenghts[i] = arr[i].length;
+        }
+
+        return resultArr;
+    }
 }
