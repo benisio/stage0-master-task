@@ -5,8 +5,8 @@ public class Pyramid {
     public void printPyramid(int cathetusLength) {
         for (int i = 1; i <= cathetusLength; i++) {
             // печатаем пробелы
-            for (int j = 0; j < i; j++) {
-
+            for (int j = 0; j < cathetusLength - i; j++) {
+                System.out.print(" ");
             }
 
             // печатаем с cathetusLength до 1
